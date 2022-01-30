@@ -1,8 +1,7 @@
+import NavBar from "./components/NavBar";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import NavBar from "./components/NavBar";
-import ImageSection from "./components/ImageSection";
-import Auth from "./components/Auth";
+import Dashboard from "./components/Dashboard";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -11,7 +10,12 @@ function App() {
     <>
       <BrowserRouter>
         <NavBar />
-        <Auth />
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
       </BrowserRouter>
     </>
   );
